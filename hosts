@@ -1,0 +1,5 @@
+[gocd-server]
+localhost
+
+[gocd-agent]
+localhost

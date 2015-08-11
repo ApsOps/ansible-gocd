@@ -1,0 +1,18 @@
+GOCD_AUTO_REGISTER_KEY: your_secret_key
+GOCD_SCM_GIT: true
+GOCD_CONFIGURE: true
+GOCD_CONFIGURE_SSH: false
+GOCD_SSH_PRIVATE_KEY: ./id_rsa
+GOCD_SSH_PUBLIC_KEY: ./id_rsa.pub
+GOCD_ADMIN_EMAIL: admin@example.com
+GOCD_CONFIGURE_SECURITY: true
+GOCD_DEFAULT_ADMIN: admin
+GOCD_DEFAULT_PASS: adminpass
+GOCD_PASSWDFILE_PATH: /var/go/passwd
+
+GOCD_USERS:
+  admin: adminpass
+  user1: pass1
+  user2: test2
+
+GOCD_JAVA_HOME: /usr/java/jdk1.8.0_45/

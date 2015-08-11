@@ -1,0 +1,28 @@
+---
+- hosts: gocd-server
+  sudo: yes
+  tags: server
+  vars_files:
+    - vars/main.yml
+    - vars/plugins.yml
+  roles:
+    - { role: gocd-server, tags: ['server'] }
+
+  tasks:
+    - name: Get JARs of the plugins
+      get_url: url="{{ item.value.url }}" dest=/var/lib/go-server/plugins/external
+      with_dict: "{{ plugins }}"
+
+    - name: Add slack notification plugin config
+      template: src=templates/go_notify.conf dest=/var/go owner={{ GOCD_USER }} group={{ GOCD_GROUP }} mode=0644
+
+    - name: Add github plugins config
+      template: src=templates/.github dest=/var/go owner={{ GOCD_USER }} group={{ GOCD_GROUP }} mode=0644
+
+- hosts: gocd-agent
+  sudo: yes
+  tags: agent
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: gocd-agent, tags: ['agent'] }

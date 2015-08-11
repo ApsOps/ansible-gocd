@@ -1,0 +1,23 @@
+SLACK_WEBHOOK_URL: http://test.com
+SLACK_CHANNEL: test
+
+GITHUB_LOGIN: test
+GITHUB_OAUTH: test
+
+"plugins": {
+    "slack build notifier": {
+        "url": "https://github.com/ashwanthkumar/gocd-slack-build-notifier/releases/download/1.0/gocd-slack-notifier-1.0.jar"
+    },
+
+    "github pull request poller": {
+        "url": "https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/1.1/github-pr-poller-1.1.jar"
+    },
+
+    "github feature branch poller": {
+        "url": "https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/1.1/git-fb-poller-1.1.jar"
+    },
+
+    "github pull request status notifier": {
+        "url": "https://github.com/srinivasupadhya/gocd-build-status-notifier/releases/download/v1.0/github-pr-status-1.0.jar"
+    }
+}

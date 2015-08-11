@@ -1,0 +1,2 @@
+login={{ GITHUB_LOGIN }}
+oauth={{ GITHUB_OAUTH }}

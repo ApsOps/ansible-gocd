@@ -1,0 +1,5 @@
+---
+   # - include: coreos.yml
+   #   when: ansible_lsb.id=='CoreOS'
+   - include: go-common.yml
+   - include: go-agent.yml

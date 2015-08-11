@@ -1,0 +1,7 @@
+---
+   # - include: coreos.yml
+   #   when: ansible_lsb.id=='CoreOS'
+   - include: go-common.yml
+   - include: go-server.yml
+   - include: server-config.yml
+     when: GOCD_CONFIGURE
